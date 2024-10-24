@@ -28,5 +28,25 @@
 		<servlet-name>Register</servlet-name>
 		<url-pattern>/register</url-pattern>
 	</servlet-mapping>
+	
+	 <servlet>
+		<servlet-name>SpendPoints</servlet-name>
+		<servlet-class>SpendPointsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SpendPoints</servlet-name>
+		<url-pattern>/spend</url-pattern>
+	</servlet-mapping>
+	
+	 <servlet>
+		<servlet-name>AddPoints</servlet-name>
+		<servlet-class>AddPointsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AddPoints</servlet-name>
+		<url-pattern>/add</url-pattern>
+	</servlet-mapping>
 
 </web-app>
