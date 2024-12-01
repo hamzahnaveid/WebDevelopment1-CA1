@@ -1,7 +1,9 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class registerAction {
 	
@@ -21,11 +23,42 @@ public class registerAction {
 			return "error";
 		}
 		
+		if(usernameReg.equals("") || emailReg.equals("") || passwordReg.equals("") || passwordAgain.equals("")) {
+			return "error";
+		}
+		
 		Connection connection = null;
 		try {
 			connection = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/ebay?serverTimezone=UTC","root", "root");
 		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		//check if user already exists in db
+		Statement checkUser = null;
+		try {
+			checkUser = connection.createStatement();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		ResultSet rs = null;
+		try {
+			rs = checkUser.executeQuery("SELECT username, email FROM user");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			while(rs.next()) {
+				if(rs.getString(1).equalsIgnoreCase(usernameReg) || rs.getString(2).equalsIgnoreCase(emailReg)) {
+					return "error";
+				}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

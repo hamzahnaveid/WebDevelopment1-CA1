@@ -5,6 +5,11 @@
 <struts>
     <package name="default" extends="struts-default">
 	
+	<action name="login" class="loginAction" method ="loginUser">
+        <result name="success">/welcome.jsp</result>
+	    <result name="error">/loginerror.jsp</result>
+    </action>
+	
 	<action name="register" class="registerAction" method ="registerUser">
         <result name="success">/regsuccess.jsp</result>
 	    <result name="error">/regerror.jsp</result>
