@@ -62,9 +62,9 @@ public class registerAction {
 			e.printStackTrace();
 		}
 
-		PreparedStatement createVote = null;
+		PreparedStatement createUser = null;
 		try {
-			createVote = connection.prepareStatement(
+			createUser = connection.prepareStatement(
 			"INSERT into user "
 			+ "(username, password, email)" +" VALUES (?, ?, ?)");
 		} catch (SQLException e) {
@@ -74,32 +74,32 @@ public class registerAction {
 		}
 		//pass in the values as parameters
          try {
-			createVote.setString(1, usernameReg);
+			createUser.setString(1, usernameReg);
 		} catch (SQLException e) {
 			result = "error";
 			e.printStackTrace();
 		}
          try {
-			createVote.setString(2, passwordReg);
+			createUser.setString(2, passwordReg);
 		} catch (SQLException e) {
 			result = "error";
 			e.printStackTrace();
 		}
          try {
- 			createVote.setString(3, emailReg);
+ 			createUser.setString(3, emailReg);
  		} catch (SQLException e) {
  			result = "error";
  			e.printStackTrace();
  		}
 		
 		try {
-			int rowsUpdated = createVote.executeUpdate();
+			int rowsUpdated = createUser.executeUpdate();
 		} catch (SQLException e) {
 			result = "error";
 			e.printStackTrace();
 		}
 		try {
-			createVote.close();
+			createUser.close();
 		} catch (SQLException e) {
 			result = "error";
 			e.printStackTrace();

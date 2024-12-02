@@ -62,6 +62,10 @@ public class loginAction extends ActionSupport implements SessionAware {
 		return result;
 	}
 	
+	public Map getSession() {
+		return m;
+	}
+	
 	@Override
 	public void setSession(Map m) {
 		// TODO Auto-generated method stub

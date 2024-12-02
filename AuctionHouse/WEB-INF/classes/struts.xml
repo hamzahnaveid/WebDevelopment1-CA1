@@ -14,6 +14,11 @@
         <result name="success">/regsuccess.jsp</result>
 	    <result name="error">/regerror.jsp</result>
     </action>
+	
+	<action name="additem" class="addItemAction" method ="addItem">
+        <result name="success">/allitems.jsp</result>
+	    <result name="error">/additemerror.jsp</result>
+    </action>
 		
     </package>
 </struts>

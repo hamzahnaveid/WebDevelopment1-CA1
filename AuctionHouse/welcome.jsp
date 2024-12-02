@@ -8,11 +8,12 @@
         <title>AuctionHouse - Home Page</title>
     </head>
     <body>
-		<h1>Hello, <s:property value="#session.name"/></h1> <br/>
+		<h1>Hello, <s:property value="#session.name"/></h1>
+		<p><a href="index.jsp">Logout</a></p> <br/>
 		<ul>
-		<li><h2>Add item for sale</h2></li>
-		<li><h2>View all items for sale</h2></li>
-		<li><h2>View all users</h2></li>
+		<li><h2><a href="additem.jsp">Add item for sale</a></h2></li>
+		<li><h2><a href="allitems.jsp">View all items for sale</a></h2></li>
+		<li><h2><a href="allusers.jsp">View all users</a></h2></li>
 		</ul>
     </body>
 </html>
