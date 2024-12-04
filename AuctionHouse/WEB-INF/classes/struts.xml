@@ -19,6 +19,11 @@
         <result name="success">/allitems.jsp</result>
 	    <result name="error">/additemerror.jsp</result>
     </action>
+	
+	<action name="makebid" class="makeBidAction" method ="makeBid">
+        <result name="success">/allitems.jsp</result>
+	    <result name="error">/makebiderror.jsp</result>
+    </action>
 		
     </package>
 </struts>
