@@ -10,7 +10,7 @@
 		<h1>All items for sale</h1> <br/>
 		<table border="2">
 			<tr>
-				<td>ID</td>
+				<td>Item ID</td>
 				<td>Name</td>
 				<td>Current Bid</td>
 				<td>Seller ID</td>
@@ -26,6 +26,7 @@
 			Statement stmt=conn.createStatement();
 			ResultSet rs=stmt.executeQuery(query);
 			while(rs.next()) {
+				int itemId = rs.getInt(1);
 			%>
 				<tr>
 					<td><%=rs.getInt(1) %></td>
@@ -33,7 +34,34 @@
 					<td><%=rs.getFloat(3) %></td>
 					<td><%=rs.getInt(4) %></td>
 				</tr>
-					<%
+				
+				<tr>
+					<td>
+						<table border="6">
+						<tr>
+							<td>Bid ID</td>
+							<td>Bidder ID</td>
+							<td>Bid Amount</td>
+						</tr>
+						<%
+						Statement bidStmt = conn.createStatement();
+						ResultSet bidRs = bidStmt.executeQuery("SELECT bid_id, bidder_id, bid_amount FROM bid WHERE item_id = " + itemId);
+						itemId++;
+						while(bidRs.next()) {
+						%>
+
+						<tr>
+							<td><%=bidRs.getInt(1) %></td>
+							<td><%=bidRs.getInt(2) %></td>
+							<td><%=bidRs.getFloat(3)%></td>
+						</tr>
+						<%
+						}
+						%>
+						</table>
+					</td>
+				</tr>
+			<%
 			}
 			%>
 				</table>

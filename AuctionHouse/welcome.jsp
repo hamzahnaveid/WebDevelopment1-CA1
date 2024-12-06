@@ -18,7 +18,6 @@
 		<li><h2><a href="allitems.jsp">View all items for sale</a></h2></li>
 		<li><h2><a href="makebid.jsp">Make a bid</a></h2></li>
 		<li><h2><a href="mybids.jsp">View my bids</a></h2></li>
-		<li><h2><a href="allbids.jsp">View all bids on an item</a></h2></li>
 		</ul>
     </body>
 </html>
