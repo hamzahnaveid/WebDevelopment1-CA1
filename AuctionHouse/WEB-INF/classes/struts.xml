@@ -24,6 +24,11 @@
         <result name="success">/allitems.jsp</result>
 	    <result name="error">/makebiderror.jsp</result>
     </action>
+	
+	<action name="viewprofile" class="viewProfileAction" method ="viewProfile">
+        <result name="success">/aprofile.jsp</result>
+	    <result name="error">/viewprofileerror.jsp</result>
+    </action>
 		
     </package>
 </struts>

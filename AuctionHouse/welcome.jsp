@@ -12,7 +12,7 @@
 		<p><a href="index.jsp">Logout</a></p> <br/>
 		<ul>
 		<li><h2><a href="myprofile.jsp">View my profile</a></h2></li>
-		<li><h2><a href="aprofile.jsp">View other's profile</a></h2></li>
+		<li><h2><a href="viewprofile.jsp">View a user's profile</a></h2></li>
 		<li><h2><a href="allusers.jsp">View all users</a></h2></li>
 		<li><h2><a href="additem.jsp">Add item for sale</a></h2></li>
 		<li><h2><a href="allitems.jsp">View all items for sale</a></h2></li>
